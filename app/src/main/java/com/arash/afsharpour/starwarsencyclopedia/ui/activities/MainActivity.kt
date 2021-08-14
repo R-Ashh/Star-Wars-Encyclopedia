@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import com.arash.afsharpour.starwarsencyclopedia.pokemonList.PokemonListScreen
 import com.arash.afsharpour.starwarsencyclopedia.ui.theme.SWEWhite
 import com.arash.afsharpour.starwarsencyclopedia.ui.theme.StarWarsEncyclopediaTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,8 +24,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val homeRoute : String = "home_screen"
-    private val detailRoute : String = "detail_screen"
+    private val homeRoute: String = "home_screen"
+    private val detailRoute: String = "detail_screen"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     startDestination = homeRoute
                 ) {
                     composable(homeRoute) {
-
+                        PokemonListScreen(navController = navController)
                     }
 
                     composable(

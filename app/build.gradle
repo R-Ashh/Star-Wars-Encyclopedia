@@ -161,8 +161,9 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     //Coil
-    implementation "io.coil-kt:coil:1.3.1"
-    implementation "com.google.accompanist:accompanist-coil:0.7.0"
+//    implementation "io.coil-kt:coil:1.3.1"
+//    implementation "com.google.accompanist:accompanist-coil:0.7.0"
+    implementation 'io.coil-kt:coil-compose:1.3.0'
 
     // Timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
