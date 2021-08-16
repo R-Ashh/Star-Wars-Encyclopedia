@@ -5,6 +5,7 @@ import com.arash.afsharpour.starwarsencyclopedia.data.remote.response.Pokemon
 import com.arash.afsharpour.starwarsencyclopedia.data.remote.response.PokemonList
 import com.arash.afsharpour.starwarsencyclopedia.util.Resource
 import dagger.hilt.android.scopes.ActivityScoped
+import timber.log.Timber
 import javax.inject.Inject
 
 @ActivityScoped
@@ -25,6 +26,8 @@ class PokemonRepository @Inject constructor(
         val response = try {
             api.getPokemonDetail(pokemonName)
         } catch (e: Exception) {
+            Timber.d("PokemonName: Cause: ${e.cause}")
+            Timber.d("PokemonName: Message:  ${e.message}")
             return Resource.Error("An unknown error occured.")
         }
         return Resource.Success(response)

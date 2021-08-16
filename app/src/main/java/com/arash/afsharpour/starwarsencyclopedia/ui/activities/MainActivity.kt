@@ -16,9 +16,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import com.arash.afsharpour.starwarsencyclopedia.pokemonList.PokemonListScreen
+import com.arash.afsharpour.starwarsencyclopedia.pokemondetail.PokemonDetailScreen
 import com.arash.afsharpour.starwarsencyclopedia.ui.theme.SWEWhite
 import com.arash.afsharpour.starwarsencyclopedia.ui.theme.StarWarsEncyclopediaTheme
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 
 @AndroidEntryPoint
@@ -59,6 +61,12 @@ class MainActivity : ComponentActivity() {
                         val characterName = remember {
                             it.arguments?.getString("characterName")
                         }
+
+                        PokemonDetailScreen(
+                            dominantColor = dominantColor,
+                            pokemonName = characterName?.lowercase(Locale.ROOT) ?: "",
+                            navController = navController
+                        )
 
 
                     }

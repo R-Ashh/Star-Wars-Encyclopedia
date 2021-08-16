@@ -245,7 +245,9 @@ fun PokemonList(
 
         items(itemCount) { index ->
             if (index >= itemCount - 1 && !endReached && !isLoading) {
-                viewModel.loadPokemonPaginated()
+                LaunchedEffect(key1 = true){
+                    viewModel.loadPokemonPaginated()
+                }
             }
             PokedexRow(rowIndex = index, entries = pokemonList, navController = navController)
         }
